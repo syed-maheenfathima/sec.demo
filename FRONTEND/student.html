@@ -39,7 +39,7 @@
         align-self: center;
       }
       input[type="text"],
-      input[type="email"],
+      input[type="email"] 
       input[type="password"] {
         padding: 8px 10px;
         border-radius: 8px;
@@ -50,8 +50,8 @@
         background: #eaf6ff;
       }
       input[type="text"]:focus,
-      input[type="email"]:focus,
-      input[type="password"]:focus {
+      input[type="email"]:focus 
+        input[type="password"]:focus {
         box-shadow: 0 0 8px #74ebd5;
         outline: none;
       }
@@ -79,12 +79,6 @@
         button, input[type="submit"] { grid-column: span 1; }
       }
     </style>
-    <script>
-      function showPasswordField() {
-        document.getElementById("password-field").style.display = "block";
-        document.getElementById("show-password-btn").style.display = "none";
-      }
-    </script>
   </head>
   <body>
     <div class="container">
@@ -119,16 +113,13 @@
           <input type="checkbox" id="hobby-music" name="hobbies" value="Music">
           <label for="hobby-music">Music</label>
           <input type="checkbox" id="hobby-gaming" name="hobbies" value="Gaming">
-          <label for="hobby-gaming">Gaming</label>
-        </div>
-        
-        <button type="button" id="show-password-btn" onclick="showPasswordField()">Show Password</button>
-        <div id="password-field" style="display:none;">
+          <label for="hobby-gaming">Gaming</label><br>
+          </div>
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" placeholder="Enter your password">
-        </div>
-        <button type="submit">Submit</button>
+          <input type="password" id="password" name="password" placeholder="************">
+         <button type="submit">Submit</button>
       </form>
+      </table>
     </div>
   </body>
 </html>
