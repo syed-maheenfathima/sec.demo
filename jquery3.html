@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e0488f;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      background: #fff;
+      margin: 8px auto;
+      padding: 10px;
+      border-radius: 8px;
+      width: 280px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .deleteBtn {
+      background-color: #3ce7a0;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: rgb(41, 17, 115);
+    }
+
+    .deleteBtn:hover {
+      background-color: #2bc0aa;
+    }
+  </style>
+</head>
+<body>
+  <h2>To Do List</h2>
+
+  <input type="text" id="taskInput" placeholder="Enter a new task">
+  <button id="addTaskBtn">Add Task</button>
+  <button id="appendTaskBtn">Append </button>
+  <button id="prependTaskBtn">Prepend </button>
+
+  <ul id="taskList"></ul>
+
+  <script>
+    $(document).ready(function () {
+      // Add custom task
+      $("#addTaskBtn").click(function () {
+        let task = $("#taskInput").val();
+        if (task) {
+          $("#taskList").append("<li>" + task + " <button class='deleteBtn'>Delete</button></li>");
+          $("#taskInput").val("");
+        }
+      });
+
+      // Append tasks 1,2,3
+      $("#appendTaskBtn").click(function () {
+        $("#taskList").append("<li>Task 1 <button class='deleteBtn'>Delete</button></li>");
+        $("#taskList").append("<li>Task 2 <button class='deleteBtn'>Delete</button></li>");
+        $("#taskList").append("<li>Task 3 <button class='deleteBtn'>Delete</button></li>");
+      });
+
+      // Prepend tasks 1,2,3
+      $("#prependTaskBtn").click(function () {
+        $("#taskList").prepend("<li>Task 3 <button class='deleteBtn'>Delete</button></li>");
+        $("#taskList").prepend("<li>Task 2 <button class='deleteBtn'>Delete</button></li>");
+        $("#taskList").prepend("<li>Task 1 <button class='deleteBtn'>Delete</button></li>");
+      });
+
+      // Delete a task
+      $(document).on("click", ".deleteBtn", function () {
+        $(this).parent().remove();
+      });
+    });
+  </script>
+</body>
+</html>

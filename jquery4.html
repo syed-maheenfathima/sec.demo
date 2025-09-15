@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #a51179;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 8px 12px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      background: #fff;
+      margin: 8px auto;
+      padding: 10px;
+      border-radius: 8px;
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .deleteBtn {
+      background-color: #e74c3c;
+    }
+    .deleteBtn:hover {
+      background-color: #c0392b;
+    }
+
+    .completeBtn {
+      background-color: #3498db;
+    }
+    .completeBtn:hover {
+      background-color: #2980b9;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      background-color: #d4edda;
+      color: #155724;
+    }
+  </style>
+</head>
+<body>
+  <h2>To Do List</h2>
+
+  <input type="text" id="taskInput" placeholder="Enter a new task">
+  <button id="addTaskBtn">Add Task</button>
+  <button id="appendTaskBtn">Append </button>
+  <button id="prependTaskBtn">Prepend </button>
+
+  <ul id="taskList"></ul>
+
+  <script>
+    $(document).ready(function () {
+      // Function to add a task with buttons
+      function addTask(task) {
+        $("#taskList").append(
+          "<li>" + 
+            "<span class='taskText'>" + task + "</span>" +
+            "<div>" +
+              "<button class='completeBtn'>Complete</button> " +
+              "<button class='deleteBtn'>Delete</button>" +
+            "</div>" +
+          "</li>"
+        );
+      }
+
+      // Add custom task
+      $("#addTaskBtn").click(function () {
+        let task = $("#taskInput").val();
+        if (task) {
+          addTask(task);
+          $("#taskInput").val("");
+        }
+      });
+
+      // Append tasks 1,2,3
+      $("#appendTaskBtn").click(function () {
+        addTask("Task 1");
+        addTask("Task 2");
+        addTask("Task 3");
+      });
+
+      // Prepend tasks 1,2,3
+      $("#prependTaskBtn").click(function () {
+        $("#taskList").prepend(
+          "<li><span class='taskText'>Task 3</span><div><button class='completeBtn'>Complete</button> <button class='deleteBtn'>Delete</button></div></li>"
+        );
+        $("#taskList").prepend(
+          "<li><span class='taskText'>Task 2</span><div><button class='completeBtn'>Complete</button> <button class='deleteBtn'>Delete</button></div></li>"
+        );
+        $("#taskList").prepend(
+          "<li><span class='taskText'>Task 1</span><div><button class='completeBtn'>Complete</button> <button class='deleteBtn'>Delete</button></div></li>"
+        );
+      });
+
+      // Delete task
+      $(document).on("click", ".deleteBtn", function () {
+        $(this).closest("li").remove();
+      });
+
+      // Mark task complete (toggle)
+      $(document).on("click", ".completeBtn", function () {
+        $(this).closest("li").toggleClass("completed");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="todo.js"></script>
+</head>
+<body>
+    <h2>To Do List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a new task">
+    <button id="addTaskBtn">Add Task</button>
+    <ul id="taskList"></ul> 
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $("#addTaskBtn").click(function(){
+            let task = $("#taskInput").val();
+            if(task){
+                $("#taskList").append("<li>" + task + " <button class='deleteBtn'>Delete</button></li>");
+                $("#taskInput").val("");
+            }
+        });
+
+        $(document).on("click", ".deleteBtn", function(){
+            $(this).parent().remove();
+        });
+    });
+        $("p").css("font-weight", "italic");
+      });
+    });
+        $("p").css("font-weight", "verdana");
+      }, function(){
+        $("h2").text("Button Clicked but Hovered Out!");
+        $("h3").text("Button  and Hovered Out! Duplicate");
+        $(".temp").css("background-color", "lightgreen");
