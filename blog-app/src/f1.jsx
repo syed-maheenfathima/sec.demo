@@ -1,7 +1,7 @@
 import{BrowserRouter,Routes,Route} from 'react-router-dom';
-import Home from './home.jsx';     
-import About from './about.jsx';
-import Contact from './contact.jsx';
+import Home from './Pages/home.jsx';     
+import About from './Pages/about.jsx';
+import Contact from './Pages/contact.jsx';
 
 function F1() {
     return(<BrowserRouter>
