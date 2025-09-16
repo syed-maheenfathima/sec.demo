@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,123 @@
 
 .read-the-docs {
   color: #888;
+} */
+/* gvhbvhb
+/* kmkmkm */
+/* .calculator {
+  max-width: 250px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f4f4f4;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.calculator input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-align: right;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background: #0077ff;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #005fcc;
+}
+
+.clear {
+  grid-column: span 4;
+  background: #ff3d3d;
+}
+.clear:hover {
+  background: #cc2e2e;
+} */ */
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Default white text */
+.light {
+  color: rgb(255, 255, 255);
+  background-color: black;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+/* Dark mode when count > 5 */
+.dark {
+  color: black;
+  background-color: #d7caca;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Default white text */
+.light {
+  color: white;
+  background-color: rgb(18, 13, 13);
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+/* Dark mode when count > 5 */
+.dark {
+  color: black;
+  background-color: #101010;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
 }
